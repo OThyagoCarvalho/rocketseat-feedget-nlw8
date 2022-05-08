@@ -4,12 +4,13 @@ import cors from 'cors';
 
 const app = express();
 
-app.use(cors(
-  {
-    // for production
-    // origin: 'http://localhost:3000',
-  }
-));
+var corsOptions = {
+  origin: 'https://rocketseat-feedget-alt-nlw8.vercel.app/',
+  optionsSuccessStatus: 200 
+}
+
+
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(routes);
 
