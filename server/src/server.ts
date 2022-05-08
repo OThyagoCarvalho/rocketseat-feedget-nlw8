@@ -5,7 +5,7 @@ import cors from 'cors';
 const app = express();
 
 var corsOptions = {
-  origin: 'https://rocketseat-feedget-alt-nlw8.vercel.app/',
+  origin: 'https://rocketseat-feedget-alt-nlw8.vercel.app',
   optionsSuccessStatus: 200 
 }
 
