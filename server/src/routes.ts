@@ -15,6 +15,8 @@ routes.post('/feedbacks',async (request, response)=>{
 
   const {type, comment, screenshot } = request.body;
 
+  try {
+    
   const prismaFeedbacksRepository = new PrismaFeedbacksRepository();
   const nodemailerMailer = new NodemailerMailAdapter()
   const submitFeedbackUseCase = new SubmitFeedbackUseCase(
@@ -28,6 +30,12 @@ routes.post('/feedbacks',async (request, response)=>{
   })
 
   return response.status(201).send();
+    
+  } catch (err) {
+    console.log(err);
+    return response.status(500).send();
+  }
+
 
 })
 
