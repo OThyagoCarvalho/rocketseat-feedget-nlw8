@@ -5,7 +5,7 @@ import cors from 'cors';
 const app = express();
 
 var corsOptions = {
-  origin: '*.vercel.app',
+  origin: process.env.CORS_ORIGIN,
   optionsSuccessStatus: 200 
 }
 
@@ -16,6 +16,7 @@ app.use(routes);
 
 app.listen(process.env.PORT || 3333, ()=> {
   console.log('http server running!')
+  console.log(process.env.CORS_ORIGIN)
 });
 
 //SQLite
